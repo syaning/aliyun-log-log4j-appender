@@ -57,7 +57,7 @@ __topic__: yyy
 <dependency>
     <groupId>com.aliyun.openservices</groupId>
     <artifactId>aliyun-log-log4j-appender</artifactId>
-    <version>0.1.12</version>
+    <version>0.1.16</version>
 </dependency>
 ```
 
@@ -116,6 +116,9 @@ log4j.appender.loghub.source = [your source]
 log4j.appender.loghub.timeFormat=yyyy-MM-dd'T'HH:mm:ssZ
 #设置时区，默认为 UTC，可选参数（如果希望 time 字段的时区为东八区，可将该值设定为 Asia/Shanghai）
 log4j.appender.loghub.timeZone=UTC
+
+#设置写入处理器，默认为 ""，可选参数
+log4j.appender.loghub.processor=[ingest processor]
 ```
 参阅：https://github.com/aliyun/aliyun-log-producer-java
 

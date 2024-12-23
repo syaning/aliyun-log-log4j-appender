@@ -50,6 +50,8 @@ public class LoghubAppender extends AppenderSkeleton {
 
   private DateTimeFormatter formatter;
 
+  private String processor;
+
   @Override
   public void activateOptions() {
     super.activateOptions();
@@ -88,6 +90,7 @@ public class LoghubAppender extends AppenderSkeleton {
 
   public Producer createProducer() {
     projectConfig = buildProjectConfig();
+    producerConfig.setProcessor(processor);
     Producer producer = new LogProducer(producerConfig);
     producer.putProjectConfig(projectConfig);
     return producer;
@@ -321,5 +324,13 @@ public class LoghubAppender extends AppenderSkeleton {
 
   public void setTimeZone(String timeZone) {
     this.timeZone = timeZone;
+  }
+
+  public String getProcessor() {
+    return processor;
+  }
+
+  public void setProcessor(String processor) {
+    this.processor = processor;
   }
 }

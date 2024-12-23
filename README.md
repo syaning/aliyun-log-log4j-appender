@@ -57,7 +57,7 @@ Field Specifications:
 <dependency>
     <groupId>com.aliyun.openservices</groupId>
     <artifactId>aliyun-log-log4j-appender</artifactId>
-    <version>0.1.12</version>
+    <version>0.1.16</version>
 </dependency>
 ```
 
@@ -113,6 +113,9 @@ log4j.appender.loghub.timeFormat = yyyy-MM-dd'T'HH:mm:ssZ
 
 # Specify timezone of the field time, default is UTC, optional
 log4j.appender.loghub.timeZone = UTC
+
+# Specify ingest processor, default is "", optional
+log4j.appender.loghub.processor=[ingest processor]
 ```
 
 ## Sample Code
